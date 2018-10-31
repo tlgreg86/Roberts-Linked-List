@@ -7,7 +7,12 @@ import Cards from '../Cards/Cards';
 const MainWrapper = styled.section`
   height: 100vh;
   display: flex;
-  background-color: red;
+  background-color: #cfd8dc;
+
+  @media (max-width: 600px) {
+    width: auto;
+    flex-direction: column;
+  }
 `;
 
 class MainPage extends Component {
@@ -20,9 +25,11 @@ class MainPage extends Component {
   };
 
   componentDidMount() {
-    this.setState({
-      cards: JSON.parse(localStorage.getItem('cards'))
-    });
+    if (JSON.parse(localStorage.getItem("cards"))) {
+      this.setState({
+        cards: JSON.parse(localStorage.getItem('cards'))
+      });
+    }
   }
 
   handleAddCard(title, url) {

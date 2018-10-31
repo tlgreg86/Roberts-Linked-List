@@ -5,7 +5,7 @@ const CardWrapper = styled.article`
   background-color: #f2f4f4;
   border: 1px solid #607d8b;
   margin-bottom: 15px;
-  height: 140px;
+  min-height: 140px;
   width: 100%;
 `;
 
